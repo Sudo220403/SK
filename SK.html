@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sudhanshu Kadam | Portfolio</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    nav {
+      text-align: center;
+      margin-top: 10px;
+    }
+    nav a {
+      margin: 0 15px;
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 2rem 1rem;
+      max-width: 900px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-in-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    h2 {
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 0.5rem;
+    }
+    .project, .course {
+      margin-bottom: 1.5rem;
+    }
+    .skills-list, .languages {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .skills-list span, .languages span {
+      background-color: #e0e0e0;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+    footer {
+      background-color: #343a40;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="Sk png (1).png" alt="Sudhanshu Kadam">
+    <h1>Sudhanshu Kadam</h1>
+    <p>B.E. Computer Engineering Student | Data Science & NLP Enthusiast</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#courses">Courses</a>
+      <a href="#simulations">Job Simulations</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Dedicated B.E. student specializing in Engineering with a strong foundation in Python, Data Science, and Natural Language Processing. Experienced in developing innovative projects like a Resume Builder and a YouTube Transcript Summarizer. Completed job simulations with companies like BCG and TATA, gaining real-world insights into data-driven decision-making and business analytics.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Resume Builder and Analyzer</h3>
+      <p>A dual-component tool that allows users to create structured resumes and analyze them using NLP techniques to extract keywords and calculate experience.</p>
+      <p><strong>Tech:</strong> Python, HTML, CSS, React.js</p>
+    </div>
+    <div class="project">
+      <h3>YouTube Transcript Summarizer</h3>
+      <p>Extracts and summarizes YouTube video transcripts using advanced NLP techniques including spaCy, NLTK, and BART from Hugging Face.</p>
+      <p><strong>Tech:</strong> Python, NLP, NLTK, spaCy</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-list">
+      <span>Python</span><span>Data Science</span><span>Machine Learning</span><span>NLP</span>
+      <span>NLTK</span><span>spaCy</span><span>Scikit-Learn</span><span>SQL</span>
+      <span>Power BI</span><span>Tableau</span>
+    </div>
+    <h3>Languages</h3>
+    <div class="languages">
+      <span>English (Native)</span><span>Hindi (Native)</span>
+      <span>French (Beginner)</span><span>German (Beginner)</span>
+    </div>
+  </section>
+
+  <section id="courses">
+    <h2>Courses</h2>
+    <div class="course">
+      <p><strong>Data Science with Python – NPTEL</strong> – Learned NumPy, Pandas, Data Wrangling, EDA</p>
+      <p><strong>Natural Language Processing – Coursera</strong> – Built models using RNN, LSTM, BERT</p>
+      <p><strong>SQL for Data Analytics – Udemy</strong> – Query writing, Joins, CTEs, Subqueries</p>
+    </div>
+  </section>
+
+  <section id="simulations">
+    <h2>Job Simulations</h2>
+    <div>
+      <p><strong>BCG – Data Science Simulation</strong> (Feb 2025):</p>
+      <ul>
+        <li>Performed customer churn analysis for a telecom client</li>
+        <li>Used Random Forest Classifier to reach 85% accuracy</li>
+        <li>Utilized Python libraries: Pandas, NumPy, Seaborn, Matplotlib</li>
+        <li>Communicated insights to stakeholders</li>
+      </ul>
+    </div>
+    <div>
+      <p><strong>TATA – Data Visualization Simulation</strong> (Mar 2025):</p>
+      <ul>
+        <li>Created dashboards using Power BI & Tableau</li>
+        <li>Performed demand and revenue analysis for a retail firm</li>
+        <li>Generated actionable insights for expansion strategy</li>
+        <li>Recommended top 10 countries and customer segments</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p><strong>Email:</strong> kadamsudhanshu2003@gmail.com</p>
+    <p><strong>Location:</strong> Mumbai, India</p>
+    <p><strong>Phone:</strong> +91 9136215022</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Sudhanshu Kadam | All rights reserved.</p>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll("section");
+    const options = {
+      threshold: 0.1
+    };
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, options);
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
