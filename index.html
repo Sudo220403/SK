@@ -11,12 +11,21 @@
       padding: 0;
       background-color: #f8f9fa;
       color: #333;
+      scroll-behavior: smooth;
     }
     header {
       background-color: #007bff;
       color: white;
       padding: 2rem 1rem;
       text-align: center;
+    }
+    header img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
     nav {
       text-align: center;
@@ -32,12 +41,19 @@
       padding: 2rem 1rem;
       max-width: 900px;
       margin: auto;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-in-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
     h2 {
       border-bottom: 2px solid #007bff;
       padding-bottom: 0.5rem;
     }
-    .project {
+    .project, .course {
       margin-bottom: 1.5rem;
     }
     .skills-list, .languages {
@@ -60,12 +76,14 @@
 </head>
 <body>
   <header>
+    <img src="Sk png (1).png" alt="Sudhanshu Kadam">
     <h1>Sudhanshu Kadam</h1>
     <p>B.E. Computer Engineering Student | Data Science & NLP Enthusiast</p>
     <nav>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
+      <a href="#courses">Courses</a>
       <a href="#simulations">Job Simulations</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -104,12 +122,35 @@
     </div>
   </section>
 
+  <section id="courses">
+    <h2>Courses</h2>
+    <div class="course">
+      <p><strong>Data Science with Python – NPTEL</strong> – Learned NumPy, Pandas, Data Wrangling, EDA</p>
+      <p><strong>Natural Language Processing – Coursera</strong> – Built models using RNN, LSTM, BERT</p>
+      <p><strong>SQL for Data Analytics – Udemy</strong> – Query writing, Joins, CTEs, Subqueries</p>
+    </div>
+  </section>
+
   <section id="simulations">
     <h2>Job Simulations</h2>
-    <ul>
-      <li><strong>BCG Data Science Simulation</strong> (Feb 2025): Customer churn analysis with Random Forest (85% accuracy), Python (Pandas, NumPy).</li>
-      <li><strong>TATA Data Visualization Simulation</strong> (Mar 2025): Created executive data visualizations for decision support.</li>
-    </ul>
+    <div>
+      <p><strong>BCG – Data Science Simulation</strong> (Feb 2025):</p>
+      <ul>
+        <li>Performed customer churn analysis for a telecom client</li>
+        <li>Used Random Forest Classifier to reach 85% accuracy</li>
+        <li>Utilized Python libraries: Pandas, NumPy, Seaborn, Matplotlib</li>
+        <li>Communicated insights to stakeholders</li>
+      </ul>
+    </div>
+    <div>
+      <p><strong>TATA – Data Visualization Simulation</strong> (Mar 2025):</p>
+      <ul>
+        <li>Created dashboards using Power BI & Tableau</li>
+        <li>Performed demand and revenue analysis for a retail firm</li>
+        <li>Generated actionable insights for expansion strategy</li>
+        <li>Recommended top 10 countries and customer segments</li>
+      </ul>
+    </div>
   </section>
 
   <section id="contact">
@@ -122,5 +163,24 @@
   <footer>
     <p>&copy; 2025 Sudhanshu Kadam | All rights reserved.</p>
   </footer>
+
+  <script>
+    const sections = document.querySelectorAll("section");
+    const options = {
+      threshold: 0.1
+    };
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, options);
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>
+
